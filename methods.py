@@ -7,11 +7,11 @@ import requests
 
 def load_model():
 
-    url = "https://github.com/AgabaEmbedded/Large_files/releases/download/v1.0/Large.model.keras"
-    response = requests.get(url)
+    #url = "https://github.com/AgabaEmbedded/Large_files/releases/download/v1.0/Large.model.keras"
+    #response = requests.get(url)
 
-    with open("model.keras", "wb") as f:
-        f.write(response.content)
+    #with open("model.keras", "wb") as f:
+    #    f.write(response.content)
     model = tf.keras.models.load_model("model.keras")
     return model
 
