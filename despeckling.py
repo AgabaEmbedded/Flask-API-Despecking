@@ -14,11 +14,12 @@ result_folder = "result"
 dir_list = [upload_folder, input_band_folder, input_patch_folder, despeckled_patch_folder, despeckled_band_folder, result_folder]
 
 
-model = load_model()
+
 app = Flask(__name__)
 
 @app.route("/predict", methods=["POST"])
 def make_pred():
+    model = load_model()
     input_json = request.get_json()
     input_imageb64 = input_json["image"]
     height = input_json["height"]
